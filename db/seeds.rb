@@ -8,5 +8,16 @@
 
 User.destroy_all
 
-User.create(name: 'Danny', type: 'Type', points: 30)
+# user seed data
+User.create(name: "Danny", category: "parent", points: 30)
+User.create(name: "Mike", category: "child", points: 300)
+User.create(name: "Tom", category: "child", points: 40)
+User.create(name: "Bob", category: "child", points: 200)
 
+# task seed data
+Task.create(name: "Clean living room", description: "pick up the toys, sweep the floor", points: 40)
+Task.create(name: "wash the dishes", description: "fill the dish washer and wash the pots and pans", points: 20)
+
+#Event seed data
+Event.create(name: "Toms play", description: "Tom has the lead role in the school play", event_date: "2020-11-9")
+Event.create(name: "Movie night", description: "watching moana", event_date: "2020-11-10")
