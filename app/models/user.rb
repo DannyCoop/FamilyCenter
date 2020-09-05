@@ -6,6 +6,6 @@ class User < ApplicationRecord
     has_many :events, through: :User_events
 
     validates :name, presence: true, uniqueness: true
-    validates :password, presence: true
+    # validates :password, presence: true
     validates :category, presence: true
 end

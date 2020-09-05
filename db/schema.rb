@@ -32,7 +32,7 @@ ActiveRecord::Schema.define(version: 2020_09_02_072954) do
   create_table "tasks", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "points"
+    t.integer "points", default: 10
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_09_02_072954) do
   create_table "user_events", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "event_id"
+    t.integer "family_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["event_id"], name: "index_user_events_on_event_id"
@@ -50,7 +51,7 @@ ActiveRecord::Schema.define(version: 2020_09_02_072954) do
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "category"
-    t.integer "points"
+    t.integer "points", default: 0, null: false
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
