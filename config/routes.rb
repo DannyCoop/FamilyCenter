@@ -8,8 +8,8 @@ Rails.application.routes.draw do
       resources :events, only: [:index]
       resources :pending_tasks, only: [:create, :destroy]
       post "/login", to: "users#login" 
-      get "/requester_task", to: "pending_task#requester_task"
-      get "/requestee_task", to: "pending_task#requestee_task"
+      get "/requester_task/:id", to: "pending_tasks#requester_task"
+      get "/requestee_task/:id", to: "pending_tasks#requestee_task"
     end
   end
 end

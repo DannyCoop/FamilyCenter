@@ -1,6 +1,7 @@
-class PendingTasksController < ApplicationController
+class Api::V1::PendingTasksController < ApplicationController
     def create
-        pt = PendingTask.new(:requestee_task_id,:requestee_id, :requester_task_id, :requester_id)
+        pt = PendingTask.new(pending_task_params)
+        # byebug
         if pt.save
             render json: pt
         else
@@ -15,10 +16,19 @@ class PendingTasksController < ApplicationController
     end
 
     def requester_task
-        requester_task = PendingTask.find_by(:requester_task_id)
+        requester = PendingTask.find_by(requester_id: params[:id])
+        render json: requester.to_json( :include => [:requester_task, :requestee_task, :requestee])
     end
 
     def requestee_task
-        requestee_task = PendingTask.find_by(:requestee_task_id)
+        requestee = PendingTask.find_by(requestee_id: params[:id])
+        render json: requestee.to_json( :include => [:requestee_task, :requester_task, :requester])
+    end
+
+
+    private
+
+    def pending_task_params
+        params.permit(:requestee_task_id,:requestee_id, :requester_task_id, :requester_id)
     end
 end

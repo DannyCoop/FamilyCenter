@@ -33,7 +33,8 @@ class Api::V1::UsersController < ApplicationController
 
     def update
         user = User.find(params[:id])
-        user.update(user_params)
+        user.update(points: params[:points])
+        # byebug
         task = Task.find_by(id: params[:task])
         if task
             task.destroy

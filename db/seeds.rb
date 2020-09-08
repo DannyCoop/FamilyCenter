@@ -20,7 +20,14 @@ u4 = User.create(name: "Bob", category: "child", points: 200, password: 'passwor
 # task seed data
 Task.create(name: "Clean living room", description: "pick up the toys, sweep the floor", points: 40, user_id: u2.id)
 Task.create(name: "wash the dishes", description: "fill the dish washer and wash the pots and pans", points: 20, user_id: u2.id)
-
+Task.create(name: "Clean living room", description: "pick up the toys, sweep the floor", points: 40, user_id: u2.id)
+Task.create(name: "wash the dishes", description: "fill the dish washer and wash the pots and pans", points: 20, user_id: u2.id)
+Task.create(name: "Clean living room", description: "pick up the toys, sweep the floor", points: 40, user_id: u2.id)
+Task.create(name: "wash the dishes", description: "fill the dish washer and wash the pots and pans", points: 20, user_id: u2.id)
+Task.create(name: "Clean living room", description: "pick up the toys, sweep the floor", points: 40, user_id: u2.id)
+Task.create(name: "wash the dishes", description: "fill the dish washer and wash the pots and pans", points: 20, user_id: u2.id)
+Task.create(name: "Clean living room", description: "pick up the toys, sweep the floor", points: 40, user_id: u2.id)
+Task.create(name: "wash the dishes", description: "fill the dish washer and wash the pots and pans", points: 20, user_id: u2.id)
 #Event seed data
 Event.create(name: "Toms play", description: "Tom has the lead role in the school play", event_date: "2020-11-9")
 Event.create(name: "Movie night", description: "watching moana", event_date: "2020-11-10")
