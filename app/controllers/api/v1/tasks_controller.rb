@@ -4,6 +4,12 @@ class Api::V1::TasksController < ApplicationController
         render json: tasks
     end
 
+    def show
+        task = Task.find(params[:id])
+
+        render json: task
+    end
+
     def create
         task = Task.new(task_params)
         # byebug
@@ -13,6 +19,13 @@ class Api::V1::TasksController < ApplicationController
         else
             render json: {error: "Can't make a task yikes"}
         end
+    end
+
+    def update
+        task = Task.find(params[:id])
+        task.update(task_params)
+        
+        render json: task
     end
 
     private

@@ -10,4 +10,30 @@ class User < ApplicationRecord
     validates :name, presence: true, uniqueness: true
 
     validates :category, presence: true
+
+    def all_requestee_task
+        requestee_tasks.map do |taskRequest| 
+            {
+                pending_task_id: taskRequest.id,
+                requestee_task: taskRequest.requestee_task,
+                requestee_id: taskRequest.requestee_id,
+                requester_task: taskRequest.requester_task,
+                requester_id: taskRequest.requester_id
+            }
+
+        end
+    end
+
+    def all_requester_task
+        requester_tasks.map do |taskRequest| 
+            {
+                pending_task_id: taskRequest.id, 
+                requestee_task: taskRequest.requestee_task,
+                requestee_id: taskRequest.requestee_id,
+                requester_task: taskRequest.requester_task,
+                requester_id: taskRequest.requester_id
+            }
+
+        end
+    end
 end

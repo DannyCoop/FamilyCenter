@@ -2,7 +2,10 @@ class Api::V1::UsersController < ApplicationController
     def index
         users = User.all
 
-        render json: users.to_json( :include => [:tasks, :family, :events])
+        render json: users.to_json( 
+            :include => [:tasks, :family, :events],
+            :methods => [:all_requestee_task, :all_requester_task]
+        )
     end
 
     def create

@@ -15,6 +15,13 @@ class Api::V1::PendingTasksController < ApplicationController
         render json: { message: "Trade complete take care of 'pokemon name goes here'" }
     end
 
+    def update
+        pt = PendingTask.find(params[:id])
+        pt.update(pending_task_params)
+
+        render json: pt
+    end
+
     def requester_task
         requester = PendingTask.find_by(requester_id: params[:id])
         render json: requester.to_json( :include => [:requester_task, :requestee_task, :requestee])
