@@ -3,6 +3,7 @@ class User < ApplicationRecord
     belongs_to :family
     has_many :tasks
     has_many :User_events
+    has_many :calendar_event
     has_many :events, through: :User_events
     has_many :requester_tasks, :foreign_key => :requester_id, :class_name => 'PendingTask'
     has_many :requestee_tasks, :foreign_key => :requestee_id, :class_name => 'PendingTask'

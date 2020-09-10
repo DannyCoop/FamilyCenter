@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :pending_tasks
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api do
     namespace :v1 do
@@ -8,6 +7,7 @@ Rails.application.routes.draw do
       resources :events, only: [:index]
       resources :families, only: [:index, :show]
       resources :pending_tasks, only: [:create, :update, :destroy]
+      resources :calendar_events, only: [:index, :create, :destroy]
       post "/login", to: "users#login" 
       get "/requester_task/:id", to: "pending_tasks#requester_task"
       get "/requestee_task/:id", to: "pending_tasks#requestee_task"
