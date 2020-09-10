@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.destroy_all
+Task.destroy_all
+Family.destroy_all
+Event.destroy_all
 
 #family seed data
 fam1 = Family.create(family_name: "The Coops")

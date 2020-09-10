@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       resources :users, only: [:index, :create, :show, :update]
       resources :tasks, only: [:index, :show, :create, :update]
       resources :events, only: [:index]
+      resources :families, only: [:index, :show]
       resources :pending_tasks, only: [:create, :update, :destroy]
       post "/login", to: "users#login" 
       get "/requester_task/:id", to: "pending_tasks#requester_task"
