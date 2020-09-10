@@ -6,8 +6,9 @@ class Api::V1::CalendarEventsController < ApplicationController
 
     def create
         cal_event = CalendarEvent.new(cal_event_params)
+        # byebug
         if cal_event.save
-            render
+            render json: cal_event
         else
             render json: "task was not made"
         end
@@ -22,6 +23,6 @@ class Api::V1::CalendarEventsController < ApplicationController
     private
 
     def cal_event_params
-        params.permit(:title, :start_time, :end_time, :user_id)
+        params.permit(:title, :date, :end, :user_id, :family_id)
     end
 end
