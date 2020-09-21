@@ -37,7 +37,7 @@ u12 = User.create(name: "Esther", category: "child", points: 450, password: 'pas
 Task.create(name: "Clean living room", description: "pick up the toys, sweep the floor", points: 40, user_id: u3.id)
 Task.create(name: "Dishes", description: "fill the dish washer and wash the pots and pans", points: 20, user_id: u4.id)
 Task.create(name: "Clean the BathRoom", description: "Clean the sink, toilot, bathtub, and mop the floor", points: 40, user_id: u5.id)
-Task.create(name: "Cook diiner", description: "Make some thing good", points: 20, user_id: u6.id)
+Task.create(name: "Cook diner", description: "Make some thing good", points: 20, user_id: u6.id)
 Task.create(name: "Make lunches", description: "pack the lunches for school tommorow", points: 40, user_id: u9.id)
 Task.create(name: "Walk the dog", description: "Take the dog out for a walk when you get home from school", points: 20, user_id: u10.id)
 Task.create(name: "babysit", description: "Watch little sibling", points: 40, user_id: u11.id)

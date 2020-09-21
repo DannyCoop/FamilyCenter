@@ -17,7 +17,7 @@ class Api::V1::TasksController < ApplicationController
             task.save
             render json: task
         else
-            render json: {error: "Can't make a task yikes"}
+            render json: {error: "Can't make a this task"}
         end
     end
 

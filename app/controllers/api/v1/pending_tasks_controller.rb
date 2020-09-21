@@ -5,14 +5,14 @@ class Api::V1::PendingTasksController < ApplicationController
         if pt.save
             render json: pt
         else
-            render json: {error: "to scared to ask to trade task smh"}
+            render json: {error: "Task Request no sent"}
         end
     end
 
     def destroy
         pt = PendingTask.find(params[:id])
         pt.destroy
-        render json: { message: "Trade complete take care of 'pokemon name goes here'" }
+        render json: { message: "Trade complete" }
     end
 
     def update
